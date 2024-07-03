@@ -1,9 +1,18 @@
-﻿@{
+﻿@model GameModel
+
+@{
     ViewData["Title"] = "Gamescreen";
 }
 
-<div>
-    <canvas class="gameField" style="width: 95%; height: 95%; color: white">
-        <ellipse style="width: 50px; color: red" ></ellipse>
+@section HeadResources{
+    <link rel="stylesheet" href="css/Game.css" />
+}
+<center>
+<div class="map">
+        @{
+            await Html.RenderPartialAsync("GameField", Model.GameFieldModel);
+        }
+        <canvas id="motionCanvas">
     </canvas>
 </div>
+</center>

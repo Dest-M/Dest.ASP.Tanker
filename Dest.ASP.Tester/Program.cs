@@ -5,7 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IProfile>(new Profile());
-
+builder.Services.AddSingleton<IGameManager>(provider => new GameManager());
+builder.Services.AddControllersWithViews().AddRazorOptions(options => { options.ViewLocationFormats.Add("PartialView/{0}.cshtml"); });
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -16,7 +17,8 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+
+
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -28,3 +30,4 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+

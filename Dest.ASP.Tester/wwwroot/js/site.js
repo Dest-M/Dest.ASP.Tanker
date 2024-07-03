@@ -116,4 +116,10 @@
 
     });
 
+    var canvas = document.getElementById("motionCanvas");
+    var ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "green";
+    ctx.fillRect(10, 10, 100, 100);
+
 });

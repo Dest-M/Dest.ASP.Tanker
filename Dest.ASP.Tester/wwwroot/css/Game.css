@@ -1,0 +1,13 @@
+﻿.map {
+    position: center;
+    width: 800px;
+    height: 800px;
+    background-color: blue;
+    margin-left: 0%;
+}
+
+#motionCanvas {
+    width: 800px;
+    height: 800px;
+    object-fit: contain;
+}

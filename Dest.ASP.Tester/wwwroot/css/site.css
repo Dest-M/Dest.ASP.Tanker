@@ -511,6 +511,10 @@ body {
 html {
     overflow: hidden;
 }
+html, body {
+    height: 100%;
+    width: 100%;
+}
 
 .materialContainer {
     width: 100%;
@@ -546,8 +550,9 @@ html {
 }
 
 .gameField {
-    width: 95%;
-    height: 95%;
+    width: 800px;
+    height: 800px;
     color: dimgrey
 }
 }
+

@@ -3,15 +3,20 @@
 
 
 <div>
-   <h1> GameField</h1>
+   GameField
     <div class="GameField">
         
         @for (int counter = 0; counter < Model.FieldHeight; counter++)
         {
             
+               
+            @Html.Raw(@"<div class = ""GameFieldRow"">");
+
+            for (int column = 0; column < Model.FieldWidth; column++)
+            {
                 await Html.RenderPartialAsync("GameFieldRow");
-            
+            }
+            @Html.Raw("</div>");
         }
-        
     </div>
 </div>

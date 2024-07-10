@@ -6,12 +6,12 @@
         private Dictionary<string, IGameTanks> _games = [];
         public IGameTanks GetGameTanks(IGameCredentials? credentials)
         {
-            if (credentials == null) throw new NotImplementedException();
+           if (credentials != null) throw new NotImplementedException();
             if (!_games.TryGetValue("null", out var game))
             {
                 throw new InvalidOperationException();
             }
-            throw new InvalidOperationException();
+            return game;
         }
         public void InitGameTanks(IGameCredentials? credentials)
         {

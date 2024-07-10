@@ -50,3 +50,9 @@
     --height: height;
     background-position-x: calc(--height*(-1))
 }
+
+.GameFightField{
+    z-index: 1;
+    position: relative;
+
+}

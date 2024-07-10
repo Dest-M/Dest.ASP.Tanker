@@ -8,11 +8,13 @@
     <link rel="stylesheet" href="/css/Game.css" />
 }
 <center>
-<div class="map">
+<div>
         @{
             await Html.RenderPartialAsync("GameField", Model.GameFieldModel);
         }
-        <canvas id="motionCanvas">
-    </canvas>
+        @{
+            await Html.RenderPartialAsync("GameFightField", Model.GameFightFieldModel);
+        }
+       
 </div>
 </center>

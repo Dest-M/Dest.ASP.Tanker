@@ -40,14 +40,14 @@ namespace Dest.ASP.Tester.Models
 
         private CellTile[][] initialiseMap()
         {
-            CellTile [][]Map = new CellTile[FieldHeight][];
+            CellTile [][]map = new CellTile[FieldHeight][];
 
             for (int counter = 0; counter < FieldHeight; counter++)
             {
-                Map[FieldHeight] = new CellTile[FieldWidth];
-                Array.Fill(Map[counter], CellTile.Empty);
+                map[counter] = new CellTile[FieldWidth];
+                Array.Fill(map[counter], CellTile.Empty);
             }
-            return Map;
+            return map;
         }
 
 

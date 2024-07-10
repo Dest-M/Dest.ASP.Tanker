@@ -3,9 +3,9 @@
     public enum CellTile
     {
         Empty,
-        Base,
-        Brick,
-        Stone,
+        FriendlyBase,
+		EnemyBase,
+		Brick,
         Bedrock
     }
 }

@@ -1,4 +1,21 @@
-﻿@page
-@model Dest.ASP.Tester.PartialView.GameFieldCellModel
-@{
+﻿@using Dest.ASP.Tester.Models.Enums;
+
+@switch (Model)
+{
+	case CellTile.Brick:
+		<div class="BrickCell"></div>
+		break;
+	case CellTile.Empty:
+		<div class="EmptyCell"></div>
+		break;
+	case CellTile.FriendlyBase:
+		<div class="FriendlyBaseCell"></div>
+		break;
+	case CellTile.EnemyBase:
+		<div class="EnemyBaseCell"></div>
+		break;
+	case CellTile.Bedrock:
+		<div class="BedrockCell"></div>
+		break;
+
 }

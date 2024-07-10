@@ -5,7 +5,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IProfile>(new Profile());
-builder.Services.AddSingleton<IGameManager>(provider => new GameManager());
+builder.Services.AddSingleton<IGameManager>(provider =>
+{
+    var manager = new GameManager();
+    manager.InitGameTanks(null);
+    return manager;
+});
 builder.Services.AddControllersWithViews().AddRazorOptions(options => { options.ViewLocationFormats.Add("PartialView/{0}.cshtml"); });
 var app = builder.Build();
 

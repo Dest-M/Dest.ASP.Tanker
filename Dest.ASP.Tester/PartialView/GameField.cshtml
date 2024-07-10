@@ -2,11 +2,10 @@
 @model Dest.ASP.Tester.Models.GameFieldModel;
 
 
-<div>
-   GameField
+
     <div class="GameField">
         
-        @for (int counter = 0; counter < Model.FieldHeight; counter++)
+        @for (int row = 0; row < Model.FieldHeight; row++)
         {
             
                
@@ -14,9 +13,8 @@
 
             for (int column = 0; column < Model.FieldWidth; column++)
             {
-                await Html.RenderPartialAsync("GameFieldRow");
+                await Html.RenderPartialAsync("GameFieldCell", Model.Map[row][column]);
             }
             @Html.Raw("</div>");
         }
     </div>
-</div>

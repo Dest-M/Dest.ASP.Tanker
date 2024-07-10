@@ -1,3 +1,4 @@
+using Dest.ASP.Tester.Game;
 using Dest.ASP.Tester.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -5,14 +6,9 @@ using System.Security.Permissions;
 
 namespace Dest.ASP.Tester.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController(IGameManager _gameManager) : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
+       
 
         public IActionResult Index()
         {
@@ -29,7 +25,10 @@ namespace Dest.ASP.Tester.Controllers
         }
         public IActionResult Gamescreen()
         {
-            return View();
+            var game = _gameManager.GetGameTanks(null);
+            var dataModel = new GameModel(game);
+
+            return View(dataModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

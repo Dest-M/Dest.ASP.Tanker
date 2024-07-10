@@ -2,6 +2,10 @@
 {
     public enum CellTile
     {
-        
+        Empty,
+        Base,
+        Brick,
+        Stone,
+        Bedrock
     }
 }

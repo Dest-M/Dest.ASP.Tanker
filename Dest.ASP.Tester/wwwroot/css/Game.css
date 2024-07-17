@@ -1,42 +1,35 @@
-﻿.map {
-    position: center;
-    width: 800px;
-    height: 800px;
-    background-color: blue;
-    margin-left: 0%;
-}
+﻿
 
-#motionCanvas {
-    width: 800px;
-    height: 800px;
-    object-fit: contain;
-}
-
-.GameField{
+.GameField {
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
+
     justify-content: center;
     align-items: center;
+
 }
 
-.GameField .GameFieldrow{
+
+.GameField .GameFieldRow{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    
 }
 
-    .GameField .GameFieldrow div{
-        --cell-size: 5vmin;
+    .GameField .GameFieldrow div {
+
+        --cell-size: 4vmin;
         width: var(--cell-size);
         height: var(--cell-size);
-
     }
 
-.EmptyCell{
-    background-color: darkseagreen;
+.EmptyCell {
+    background-color: black;
+    background-size: auto 100%;
+    
 }
 
 .BrickCell {
@@ -44,11 +37,10 @@
     background-size: auto 100%;
 }
 
-.BedRock {
+.BedrockCell {
     background-image: url("/assets/textures/map.png");
     background-size: auto 100%;
-    --height: height;
-    background-position-x: calc(--height*(-1))
+    background-position-x: calc(var(--cell-size) * -1);
 }
 
 .GameFightField{

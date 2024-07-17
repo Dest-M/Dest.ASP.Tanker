@@ -19,6 +19,22 @@ namespace Dest.ASP.Tester.Models
         private void GenerateMap()
         {
             GenerateBrickCells(60);
+            GenerateBedrock();
+
+           
+            Map[0][FieldWidth / 2] = CellTile.EnemyBase;
+            Map[^1][FieldWidth / 2] = CellTile.FriendlyBase;
+        }
+
+        private void GenerateBedrock()
+        {
+            for (int row = 2; row < FieldHeight-2; row+=2)
+            {
+                for (int col = 2; col < FieldWidth -2; col+=2)
+                {
+                    Map[row][col] = CellTile.Bedrock;
+                }
+            }
         }
 
         private void GenerateBrickCells(int fillPercent)

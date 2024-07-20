@@ -6,7 +6,7 @@ namespace Dest.ASP.Tester.Models
 {
     public class GameFieldModel
     {
-        public  int FieldWidth => 20;
+        public  int FieldWidth => 21;
         public int FieldHeight => 20; 
         public CellTile[][] Map { get; private set; }
 
@@ -18,7 +18,7 @@ namespace Dest.ASP.Tester.Models
 
         private void GenerateMap()
         {
-            GenerateBrickCells(60);
+            GenerateBrickCells(30);
             GenerateBedrock();
 
            

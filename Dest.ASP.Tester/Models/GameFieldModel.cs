@@ -6,8 +6,8 @@ namespace Dest.ASP.Tester.Models
 {
     public class GameFieldModel
     {
-        public  int FieldWidth => 21;
-        public int FieldHeight => 20; 
+        public  int FieldWidth => 15;
+        public int FieldHeight => 15; 
         public CellTile[][] Map { get; private set; }
 
         public GameFieldModel(IGameTanks game)
